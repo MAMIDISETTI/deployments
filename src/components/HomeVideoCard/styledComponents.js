@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-
 import {Link} from 'react-router-dom'
 
 export const ListItem = styled.li`
-  background-color: none;
+  background: none;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -17,20 +16,17 @@ export const ListItem = styled.li`
 export const ThumbNailImage = styled.img`
   width: 100%;
 `
-
 export const VideoDetails = styled.div`
   display: flex;
   justify-content: flex-start;
   width: 100%;
 `
-
 export const ProfileImage = styled.img`
   width: 30px;
   height: 30px;
   border-radius: 50px;
   margin: 20px;
 `
-
 export const ContentSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -47,7 +43,6 @@ export const ChannelName = styled.p`
   font-size: 13px;
   color: ${props => props.color};
 `
-
 export const ViewsAndDate = styled.p`
   font-family: 'Roboto';
   font-size: 12px;

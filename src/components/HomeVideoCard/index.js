@@ -1,6 +1,8 @@
+import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
+
 import {
-  NavLink,
   ListItem,
+  NavLink,
   ThumbNailImage,
   VideoDetails,
   ProfileImage,
@@ -10,8 +12,6 @@ import {
   ViewsAndDate,
   Dot,
 } from './styledComponents'
-
-import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
 
 const HomeVideoCard = props => {
   const {video} = props
@@ -41,9 +41,7 @@ const HomeVideoCard = props => {
                   <Title color={textColor}>{title}</Title>
                   <ChannelName color={textColor}>{name}</ChannelName>
                   <ViewsAndDate color={textColor}>
-                    {viewCount}
-                    <Dot>&#8226;</Dot>
-                    {publishedAt}
+                    {viewCount} views<Dot> &#8226; </Dot> {publishedAt}
                   </ViewsAndDate>
                 </ContentSection>
               </VideoDetails>
