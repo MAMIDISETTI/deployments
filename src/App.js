@@ -6,8 +6,8 @@ import LoginForm from './components/LoginForm'
 import Home from './components/Home'
 import VideoDetailView from './components/VideoDetailView'
 import TrendingVideos from './components/TrendingVideos'
-//  import GamingVideos from './components/GamingVideos'
-//  import SavedVideos from './components/SavedVideos'
+import GamingVideos from './components/GamingVideos'
+import SavedVideos from './components/SavedVideos'
 import NotFound from './components/NotFound'
 
 import ThemeAndVideoContext from './context/ThemeAndVideoContext'
@@ -72,6 +72,8 @@ class App extends Component {
             component={VideoDetailView}
           />
           <ProtectedRoute exact path="/trending" component={TrendingVideos} />
+          <ProtectedRoute exact path="/gaming" component={GamingVideos} />
+          <ProtectedRoute exact path="/saved-videos" component={SavedVideos} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="not-found" />
         </Switch>
