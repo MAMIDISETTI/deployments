@@ -156,7 +156,7 @@ class Home extends Component {
                     </BannerCloseButton>
                   </BannerRightPart>
                 </BannerContainer>
-                <SearchContainer>
+                <SearchContainer data-testid="searchButton">
                   <SearchInput
                     data-testid="searchButton"
                     type="search"
