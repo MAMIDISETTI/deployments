@@ -1,12 +1,14 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
+
 import {AiOutlineClose, AiOutlineSearch} from 'react-icons/ai'
+
 import Header from '../Header'
 import NavigationBar from '../NavigationBar'
+import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
 import HomeVideos from '../HomeVideos'
 import FailureView from '../FailureView'
-import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
 
 import {
   HomeContainer,
@@ -33,9 +35,9 @@ const apiStatusConstants = {
 class Home extends Component {
   state = {
     homeVideos: [],
-    bannerDisplay: 'flex',
     searchInput: '',
     apiStatus: apiStatusConstants.initial,
+    bannerDisplay: 'flex',
   }
 
   componentDidMount() {
@@ -62,7 +64,7 @@ class Home extends Component {
         thumbnailUrl: eachVideo.thumbnail_url,
         viewCount: eachVideo.view_count,
         publishedAt: eachVideo.published_at,
-        name: eachVideo.name,
+        name: eachVideo.channel.name,
         profileImageUrl: eachVideo.channel.profile_image_url,
       }))
       this.setState({
@@ -119,12 +121,12 @@ class Home extends Component {
   }
 
   render() {
-    const {bannerDisplay, searchInput} = this.state
-
+    const {searchInput, bannerDisplay} = this.state
     return (
       <ThemeAndVideoContext.Consumer>
         {value => {
           const {isDarkTheme} = value
+
           const bgColor = isDarkTheme ? '#181818' : '#f9f9f9'
           const textColor = isDarkTheme ? '#f9f9f9' : '#231f20'
           const display = bannerDisplay === 'flex' ? 'flex' : 'none'
@@ -133,23 +135,21 @@ class Home extends Component {
             <>
               <Header />
               <NavigationBar />
-              <HomeContainer data-testis="home" bgColor={bgColor}>
-                <BannerContainer data-testis="banner" display={display}>
+              <HomeContainer data-testid="home" bgColor={bgColor}>
+                <BannerContainer data-testid="banner" display={display}>
                   <BannerLeftPart>
                     <BannerImage
                       src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
                       alt="nxt watch logo"
                     />
                     <BannerText>
-                      buy Nxt Watch Premium prepaid plans with <br />
-                      UPI
+                      Buy Nxt Watch Premium prepaid plans with <br /> UPI
                     </BannerText>
                     <BannerButton type="button">GET IT NOW</BannerButton>
                   </BannerLeftPart>
                   <BannerRightPart>
                     <BannerCloseButton
-                      type="button"
-                      data-testis="close"
+                      data-testid="close"
                       onClick={this.onCloseBanner}
                     >
                       <AiOutlineClose size={25} />
@@ -158,14 +158,15 @@ class Home extends Component {
                 </BannerContainer>
                 <SearchContainer>
                   <SearchInput
+                    data-testid="searchButton"
                     type="search"
-                    value={searchInput}
                     placeholder="Search"
-                    color={textColor}
+                    value={searchInput}
                     onChange={this.onChangeInput}
+                    color={textColor}
                   />
                   <SearchIconContainer
-                    data-testis="searchButton"
+                    data-testid="searchButton"
                     onClick={this.getSearchResults}
                   >
                     <AiOutlineSearch size={20} />

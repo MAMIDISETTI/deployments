@@ -11,7 +11,6 @@ export const HomeContainer = styled.div`
     margin-bottom: 0px;
   }
 `
-
 export const BannerContainer = styled.div`
   background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
   width: 100%;
@@ -21,7 +20,6 @@ export const BannerContainer = styled.div`
   justify-content: space-between;
   padding: 20px;
 `
-
 export const BannerLeftPart = styled.div`
   width: 50%;
 `
@@ -34,16 +32,6 @@ export const BannerImage = styled.img`
   width: 80px;
   height: 30px;
 `
-
-export const BannerText = styled.p`
-  font-family: 'Roboto';
-  font-size: 15px;
-  color: #000000;
-  @media screen and (min-width: 576px) {
-    font-size: 20px;
-  }
-`
-
 export const BannerButton = styled.button`
   padding-left: 10px;
   padding-right: 10px;
@@ -53,7 +41,14 @@ export const BannerButton = styled.button`
   color: #000000;
   background: none;
 `
-
+export const BannerText = styled.p`
+  font-family: 'Roboto';
+  font-size: 15px;
+  color: #000000;
+  @media screen and (min-width: 576px) {
+    font-size: 20px;
+  }
+`
 export const BannerCloseButton = styled.button`
   border: none;
   background: none;
@@ -71,16 +66,6 @@ export const SearchContainer = styled.div`
     width: 40%;
   }
 `
-
-export const SearchInput = styled.input`
-  background: none;
-  width: 100%;
-  outline: none;
-  padding: 5px;
-  border: none;
-  color: ${props => props.color};
-  font-family: ' Roboto';
-`
 export const SearchIconContainer = styled.button`
   display: flex;
   justify-content: center;
@@ -90,6 +75,15 @@ export const SearchIconContainer = styled.button`
   border: none;
 `
 
+export const SearchInput = styled.input`
+  background: none;
+  width: 100%;
+  outline: none;
+  padding: 5px;
+  border: none;
+  color: ${props => props.color};
+  font-family: Roboto;
+`
 export const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;

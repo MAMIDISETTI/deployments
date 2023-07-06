@@ -9,7 +9,7 @@ import {
   GamingViewsAndDate,
 } from './styledComponents'
 
-const GameVideoCard = props => {
+const VideoCard = props => {
   const {videoDetails} = props
   const {id, title, thumbnailUrl, viewCount} = videoDetails
 
@@ -37,4 +37,4 @@ const GameVideoCard = props => {
   )
 }
 
-export default GameVideoCard
+export default VideoCard
