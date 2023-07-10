@@ -136,27 +136,29 @@ class Home extends Component {
               <Header />
               <NavigationBar />
               <HomeContainer data-testid="home" bgColor={bgColor}>
-                <BannerContainer data-testid="banner" display={display}>
-                  <BannerLeftPart>
-                    <BannerImage
-                      src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-                      alt="nxt watch logo"
-                    />
-                    <BannerText>
-                      Buy Nxt Watch Premium prepaid plans with <br /> UPI
-                    </BannerText>
-                    <BannerButton type="button">GET IT NOW</BannerButton>
-                  </BannerLeftPart>
-                  <BannerRightPart>
-                    <BannerCloseButton
-                      data-testid="close"
-                      onClick={this.onCloseBanner}
-                    >
-                      <AiOutlineClose size={25} />
-                    </BannerCloseButton>
-                  </BannerRightPart>
-                </BannerContainer>
-                <SearchContainer data-testid="searchButton">
+                {display === 'flex' && (
+                  <BannerContainer data-testid="banner" display={display}>
+                    <BannerLeftPart>
+                      <BannerImage
+                        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                        alt="nxt watch logo"
+                      />
+                      <BannerText>
+                        Buy Nxt Watch Premium prepaid plans with <br /> UPI
+                      </BannerText>
+                      <BannerButton type="button">GET IT NOW</BannerButton>
+                    </BannerLeftPart>
+                    <BannerRightPart>
+                      <BannerCloseButton
+                        data-testid="close"
+                        onClick={this.onCloseBanner}
+                      >
+                        <AiOutlineClose size={25} />
+                      </BannerCloseButton>
+                    </BannerRightPart>
+                  </BannerContainer>
+                )}
+                <SearchContainer>
                   <SearchInput
                     data-testid="searchButton"
                     type="search"
