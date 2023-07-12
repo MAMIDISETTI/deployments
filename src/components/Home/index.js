@@ -160,7 +160,6 @@ class Home extends Component {
                 )}
                 <SearchContainer>
                   <SearchInput
-                    data-testid="searchButton"
                     type="search"
                     placeholder="Search"
                     value={searchInput}
@@ -168,8 +167,8 @@ class Home extends Component {
                     color={textColor}
                   />
                   <SearchIconContainer
-                    data-testid="searchButton"
                     onClick={this.getSearchResults}
+                    data-testid="searchButton"
                   >
                     <AiOutlineSearch size={20} />
                   </SearchIconContainer>
