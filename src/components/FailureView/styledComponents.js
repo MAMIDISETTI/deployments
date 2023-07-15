@@ -39,4 +39,6 @@ export const RetryButton = styled.button`
   padding-bottom: 5px;
   font-family: Roboto;
   font-size: 15px;
+  cursor: pointer;
+  outline: none;
 `

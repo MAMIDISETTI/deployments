@@ -1,9 +1,9 @@
+import './index.css'
 import {
   FailedView,
   FailedImage,
   FailedHeading,
   FailedNote,
-  RetryButton,
 } from './styledComponents'
 
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
@@ -36,9 +36,9 @@ const FailureView = props => {
               We are having some trouble to complete your request. <br /> Please
               try again later.
             </FailedNote>
-            <RetryButton type="button" onClick={onClickRetry}>
+            <button type="button" className="button" onClick={onClickRetry}>
               Retry
-            </RetryButton>
+            </button>
           </FailedView>
         )
       }}
